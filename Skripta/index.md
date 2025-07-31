@@ -1,6 +1,6 @@
 ---
 title: Tehniška Dokumentacija
-nav_order: 2
+nav_order: 0
 has_children: true
 ---
 
