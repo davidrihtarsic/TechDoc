@@ -1,6 +1,6 @@
 plugins:
   - jekyll-figure
-title: "Tehnoška Dokumentacija"
+title: "TechDoc"
 remote_theme: pmarsceill/just-the-docs
 search_enabled: true
 mermaid:
