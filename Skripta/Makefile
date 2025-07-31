@@ -1,15 +1,3 @@
-pdfs:
-	@for ff in $(file); do \
-		num=$$(echo $$ff | sed 's/_.*$$//'); \
-		section=$$(echo $$num | sed 's/\..*$$//g'); \
-		subsect=$$(echo $$num | sed 's/.*\.//g'); \
-		[[ $$subsect -gt 0 ]] && subsect=$$((subsect-1)) || section=$$((section-1)); \
-		sed -i '1i\\' $$ff; \
-		sed -i "1i \\\\\setcounter{section}{$$section}\\\\\setcounter{subsection}{$$subsect}" $$ff; \
-		pandoc2notebook -f $$ff; \
-		sed -i "1,2d" $$ff; \
-		done;
-
 TITLE="Osnove 3D modeliranja in tehniškega risanja za učitelje tehnike in tehnologije"
 book:
 	@echo "Compailing all chapters into book... $(TITLE)."
@@ -45,10 +33,8 @@ book:
 		--toc \
 		--toc-depth=2 \
 		-M titlepage;
-	@rm -f ./pdf
+	@rm ./pdf/Modeliranje_in_tehniska_dokumentacija.md
 
 clean:
 	@mv -f *.pdf ./pdf/
 
-file := $(shell find ./ -maxdepth 1 -type f -name "[0-9]*.md"|sed 's/\.\///g'|sort --numeric-sort)
-all: pdfs book clean
