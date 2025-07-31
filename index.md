@@ -4,7 +4,7 @@ nav_order: 0
 has_children: true
 ---
 
-# Modeliranje in tehniška dokumentacija za učitelje tehnike
+# Modeliranje in tehniška dokumentacija za učitelje tehnike in tehnologije
 
 Ta učbenik je namenjen bodočim učiteljem tehnike in tehnologije, ki se pri svojem študiju srečujejo z izzivom razumevanja in posredovanja tehniške dokumentacije. Učni proces se začenja s praktičnim uvodom v 3D modeliranje – kot načinom razmišljanja o predmetih, njihovih oblikah, funkciji in prostorskih razmerjih.
 
