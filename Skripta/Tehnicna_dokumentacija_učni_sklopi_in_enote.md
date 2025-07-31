@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 # 1.0 Uvod v modeliranje s FreeCAD programom
 
 ## 1.1 Namestitev, osnovna nastavitev in delovna okolja
