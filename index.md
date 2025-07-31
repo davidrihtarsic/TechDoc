@@ -14,4 +14,4 @@ Gradivo je modularno strukturirano: vsaka enota vsebuje teoretični uvod s prime
 
 # Tehniška Dokumentacija
 
-Celotno učno gradivo lahko presnamete [tukaj](./pdf/Modeliranje_in_tehniska_dokumentacija.pdf).
+Celotno učno gradivo lahko presnamete [tukaj](./Skripta/pdf/Modeliranje_in_tehniska_dokumentacija.pdf).
