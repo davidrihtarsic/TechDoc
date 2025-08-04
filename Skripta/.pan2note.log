@@ -1,4 +1,2 @@
-Convering 2.3_T_Aksonometrične_projekcije.md -> PDF ..WARNING: pandoc-crossref was compiled with pandoc 3.6.4 but is being run through 3.7.0.2. This is not supported. Strange things may (and likely will) happen silently.
-/home/david/.local/bin/PanDoc2NoteBook/pandoc2notebook: line 92: -M: command not found
-/home/david/.local/bin/PanDoc2NoteBook/pandoc2notebook: line 93: --from: command not found
+Convering 8.2.2_Izračun_POV_Dimetrične_projekcije.md -> PDF ..WARNING: pandoc-crossref was compiled with pandoc 3.6.4 but is being run through 3.7.0.2. This is not supported. Strange things may (and likely will) happen silently.
 ..[32m Done [0m
