@@ -12,4 +12,5 @@ has_children: true
 
 # FreeCAD Makri:
 
+- Vrsta pisave [ISOCPEUR](./isocpeur.ttf) je zelo podobna pisavi, ki jo predpisuje ISO 3098 standard.
 - [Odpri objekt v BambuSturio](./OpenInBambu.zip)
