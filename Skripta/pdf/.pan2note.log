@@ -1,0 +1,24 @@
+Convering Modeliranje_in_tehniska_dokumentacija.md -> PDF ..[WARNING] Could not fetch resource ./slike/1.2_parametricno_nacrtovanje_sestkotnik.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/1.2_parametricno_modeliranje_matica.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/1.2_dimenzijske_in_geometrijske_omejitve.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/1.2_dimenzijske_omejitve_na_primeru.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/1.2_geometrijske_omejitve_likov.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/external_projection.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/spremenljivke_reference.png-1.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/1.2_matematicna_odvistnost_parametrov_referenca.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/1.2_parametricno_spremenljivka.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/1.3.1_Napredna_orodja_Zrcaljenje.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/PartDesign_Mirrored_example.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/Mirror_Pad_Pocket_all.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/Multi_Transform.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/izo_vs_di.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/dimetricna_projekcija.png: replacing image with description
+Error producing PDF.
+! LaTeX Error: No counter 'none' defined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1132 ...idth - 2\tabcolsep) * \real{0.4545}}@{}}
+
