@@ -12,5 +12,8 @@ has_children: true
 
 # FreeCAD Makri:
 
-- Vrsta pisave [ISOCPEUR](./isocpeur.ttf) je zelo podobna pisavi, ki jo predpisuje ISO 3098 standard.
+- Vrsta pisave [ISOCPEUR](./isocpeur.ttf) je zelo podobna pisavi, ki jo predpisuje ISO 3098 standard. Presnemite datoteko in namestite obliko pisave tako, da na datoteko kliknete z desno miškino tipko in izberite `Install`.
+- Predloga [sestavne risbe](./A3_Land_PeF_TD_SR.svg)
+- Predloga [delavniške risbe](./A3_Land_PeF_TD_DR.svg)
+- [Makro za poravnavo širine tabele](./poravnaj_sirino_kosovnice_z_galvo.py) s kosovnico sestavne risbe
 - [Odpri objekt v BambuSturio](./OpenInBambu.zip)
