@@ -1,0 +1,57 @@
+import FreeCAD as App
+import FreeCADGui as Gui
+
+def format_line(label, value, unit=""):
+    return f"{label:<12}: {value} {unit}".rstrip()
+
+sel = Gui.Selection.getSelection()
+
+if not sel:
+    App.Console.PrintError("⚠️ Ni izbranega objekta.\n")
+else:
+    obj = sel[0]
+    App.Console.PrintMessage("\n📋 PODATKI O OBJEKTU\n")
+    App.Console.PrintMessage("──────────────────────────────\n")
+    App.Console.PrintMessage(format_line("Objekt", obj.Label) + "\n")
+
+    # Privzete vrednosti
+    material_name = "Ni nastavljen"
+    density_kgm3 = None
+    volume = None
+    mass_g = None
+    mass_kg = None
+
+    # Preveri ShapeMaterial
+    if hasattr(obj, "ShapeMaterial") and obj.ShapeMaterial:
+        mat = obj.ShapeMaterial
+        if hasattr(mat, "Name"):
+            material_name = mat.Name  # ime materiala, npr. PLA, Steel ...
+        if mat.hasPhysicalProperty("Density"):
+            dens = mat.getPhysicalValue("Density")
+            # Pretvori gostoto v kg/m³
+            try:
+                density_kgm3 = float(dens.getValueAs("kg/m^3"))
+            except:
+                density_kgm3 = None
+
+    App.Console.PrintMessage(format_line("Material", material_name) + "\n")
+
+    # Volumen in masa
+    try:
+        volume = obj.Shape.Volume  # mm³
+        App.Console.PrintMessage(format_line("Volumen", f"{volume:.2f}", "mm³") + "\n")
+    except:
+        App.Console.PrintError("❌ Napaka pri branju volumna\n")
+
+    if volume and density_kgm3:
+        density_g_mm3 = density_kgm3 * 1e-6
+        mass_g = volume * density_g_mm3
+        mass_kg = mass_g / 1000
+        App.Console.PrintMessage(format_line("Gostota", f"{density_kgm3:.2f}", "kg/m³") + "\n")
+        App.Console.PrintMessage(format_line("Masa", f"{mass_g:.2f}", "g") + f" ({mass_kg:.3f} kg)\n")
+    elif density_kgm3 is None:
+        App.Console.PrintError("❌ Gostota ni znana\n")
+    else:
+        App.Console.PrintError("❌ Ni mogoče izračunati mase\n")
+
+    App.Console.PrintMessage("──────────────────────────────\n")

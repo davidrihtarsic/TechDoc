@@ -1,0 +1,9 @@
+cells = ["A", "B", "C", "D", "E", "F"]
+widths = [37, 38, 245, 209, 95, 75]
+names = ["POZ.", "KOS", "NAZIV IN MERE KOSA", "ŠT. RISBE / STANDARD", "MATERIAL", "MASA" ]
+for i in range(len(cells)):
+    App.ActiveDocument.Spreadsheet.setColumnWidth(cells[i], widths[i])
+    App.ActiveDocument.Spreadsheet.set(cells[i]+"1", names[i])
+    App.ActiveDocument.Spreadsheet.setAlignment(cells[i]+"1", 'center', 'keep')
+
+App.ActiveDocument.recompute()
