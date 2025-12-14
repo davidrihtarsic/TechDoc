@@ -1,5 +1,5 @@
 cells = ["A", "B", "C", "D", "E", "F"]
-widths = [37, 38, 245, 209, 95, 75]
+widths = [28, 28, 245, 208, 95, 93]
 names = ["POZ.", "KOS", "NAZIV IN MERE KOSA", "ŠT. RISBE / STANDARD", "MATERIAL", "MASA" ]
 for i in range(len(cells)):
     App.ActiveDocument.Spreadsheet.setColumnWidth(cells[i], widths[i])
