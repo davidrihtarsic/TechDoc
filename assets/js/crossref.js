@@ -140,7 +140,7 @@ if (window.MathJax && MathJax.Hub) {
       tag.style.position = "absolute";
       tag.style.right = "-2.5em";
       tag.style.top = "50%";
-      tag.style.transform = "translateY(-50%)";
+      tag.style.transform = "translateY(-90%)";
 
       container.appendChild(tag);
     });
