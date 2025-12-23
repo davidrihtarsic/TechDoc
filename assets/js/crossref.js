@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // zamenjamo sklice [@fig:...]
   document.body.innerHTML = document.body.innerHTML.replace(
     /\[@(fig:[^\]]+)\]/g,
-    (_, id) =>
-      figures[id]
-        ? `<a href="#${id}">sl. ${figures[id]}</a>`
+    (_, rawId) =>
+      figures[rawId]
+        ? `<a href="#${rawId}">sl. ${figures[rawId]}</a>`
         : `??`
   );
 
