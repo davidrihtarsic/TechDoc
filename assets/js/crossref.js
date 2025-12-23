@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const id = match[1];
     figCounter++;
     figures[id] = figCounter;
+    console.log("FIG REGISTERED:", id, "→", figCounter);
 
     // ID damo sliki
     img.id = id;
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.innerHTML = document.body.innerHTML.replace(
     /\[@(fig:[^\]]+)\]/g,
     (_, rawId) =>
+      console.log("FIG REF:", rawId, "exists?", figures.hasOwnProperty(rawId));
       figures[rawId]
         ? `<a href="#${rawId}">sl. ${figures[rawId]}</a>`
         : `??`
