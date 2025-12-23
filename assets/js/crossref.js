@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /\[@(tbl:[^\]]+)\]/g,
     (_, id) =>
       tables[id]
-        ? `<a href="#${id}">tabela ${tables[id]}</a>`
+        ? `<a href="#${id}">tbl. ${tables[id]}</a>`
         : `??`
   );
   console.log("TABLE DEBUG: tables found =", document.querySelectorAll("table").length);
