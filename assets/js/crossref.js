@@ -1,8 +1,8 @@
-// === FIGURE CROSS-REFERENCES =====================================
 
 console.log("crossref.js LOADED");
 document.addEventListener("DOMContentLoaded", () => {
   console.log("crossref.js DOMContentLoaded");
+  // === FIGURE CROSS-REFERENCES =====================================
   let figCounter = 0;
   const figures = {};
 
@@ -40,46 +40,47 @@ document.addEventListener("DOMContentLoaded", () => {
         ? `<a href="#${id}">sl. ${figures[id]}</a>`
         : `??`
   );
+
+  // === TABLE CROSS-REFERENCES =====================================
+
+  let tblCounter = 0;
+  const tables = {};
+
+  document.querySelectorAll("table").forEach(table => {
+    const captionP = table.nextElementSibling;
+
+    if (!captionP || captionP.tagName !== "P") return;
+
+    const match = captionP.textContent.match(/\{#(tbl:[^}]+)\}/);
+    if (!match) return;
+
+    const id = match[1];
+    tblCounter++;
+    tables[id] = tblCounter;
+
+    // ID damo tabeli
+    table.id = id;
+
+    // očistimo {#tbl:...}
+    const captionText = captionP.textContent
+      .replace(/\{#tbl:[^}]+\}/, "")
+      .replace(/^Table:\s*/i, "")
+      .trim();
+
+    // nov napis
+    captionP.textContent = `Tabela ${tblCounter}: ${captionText}`;
+    captionP.classList.add("table-caption");
+  });
+
+  // zamenjava sklicev [@tbl:...]
+  document.body.innerHTML = document.body.innerHTML.replace(
+    /\[@(tbl:[^\]]+)\]/g,
+    (_, id) =>
+      tables[id]
+        ? `<a href="#${id}">tabela ${tables[id]}</a>`
+        : `??`
+  );
+  console.log("TABLE DEBUG: tables found =", document.querySelectorAll("table").length);
+
 });
-
-// === TABLE CROSS-REFERENCES =====================================
-
-let tblCounter = 0;
-const tables = {};
-
-document.querySelectorAll("table").forEach(table => {
-  const captionP = table.nextElementSibling;
-
-  if (!captionP || captionP.tagName !== "P") return;
-
-  const match = captionP.textContent.match(/\{#(tbl:[^}]+)\}/);
-  if (!match) return;
-
-  const id = match[1];
-  tblCounter++;
-  tables[id] = tblCounter;
-
-  // ID damo tabeli
-  table.id = id;
-
-  // očistimo {#tbl:...}
-  const captionText = captionP.textContent
-    .replace(/\{#tbl:[^}]+\}/, "")
-    .replace(/^Table:\s*/i, "")
-    .trim();
-
-  // nov napis
-  captionP.textContent = `Tabela ${tblCounter}: ${captionText}`;
-  captionP.classList.add("table-caption");
-});
-
-// zamenjava sklicev [@tbl:...]
-document.body.innerHTML = document.body.innerHTML.replace(
-  /\[@(tbl:[^\]]+)\]/g,
-  (_, id) =>
-    tables[id]
-      ? `<a href="#${id}">tabela ${tables[id]}</a>`
-      : `??`
-);
-console.log("TABLE DEBUG: tables found =", document.querySelectorAll("table").length);
 
