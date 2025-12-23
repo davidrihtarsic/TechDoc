@@ -81,3 +81,5 @@ document.body.innerHTML = document.body.innerHTML.replace(
       ? `<a href="#${id}">tabela ${tables[id]}</a>`
       : `??`
 );
+console.log("TABLE DEBUG: tables found =", document.querySelectorAll("table").length);
+
