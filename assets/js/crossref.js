@@ -92,5 +92,65 @@ document.addEventListener("DOMContentLoaded", () => {
         : `??`
   );
   console.log("TABLE DEBUG: tables found =", document.querySelectorAll("table").length);
+
+// === EQUATION CROSS-REFERENCES ==================================
+
+  if (window.MathJax && MathJax.Hub) {
+    MathJax.Hub.Queue(() => {
+
+      let eqCounter = 0;
+      const equations = {};
+
+      // vse display enačbe (MathJax 2)
+      document.querySelectorAll('script[type="math/tex"]').forEach(script => {
+        const container = script.previousElementSibling;
+        if (!container || !container.classList.contains("MathJax")) return;
+
+        // poiščemo komentar ZA enačbo
+        let node = script.nextSibling;
+        while (node && node.nodeType !== Node.COMMENT_NODE) {
+          node = node.nextSibling;
+        }
+        if (!node) return;
+
+        const match = node.nodeValue.match(/eq:([A-Za-z0-9_-]+)/);
+        if (!match) return;
+
+        const id = `eq:${match[1]}`;
+        eqCounter++;
+        equations[id] = eqCounter;
+
+        // ID damo na MathJax container
+        container.id = id;
+
+        // številka enačbe (desno)
+        const tag = document.createElement("span");
+        tag.className = "equation-number";
+        tag.textContent = `(${eqCounter})`;
+
+        container.style.position = "relative";
+        tag.style.position = "absolute";
+        tag.style.right = "-2.5em";
+        tag.style.top = "50%";
+        tag.style.transform = "translateY(-50%)";
+
+        container.appendChild(tag);
+      });
+
+      // zamenjava sklicev [@eq:...]
+      document.body.innerHTML = document.body.innerHTML.replace(
+        /\[@(eq:[^\]]+)\]/g,
+        (_, id) =>
+          equations[id]
+            ? `<a href="#${id}">(enačba ${equations[id]})</a>`
+            : `??`
+      );
+
+    });
+  }
+
+
+
+//konec DOMContentLoad-erja
 });
 
