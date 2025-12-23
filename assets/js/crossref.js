@@ -33,15 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     p.appendChild(caption);
   });
-
+  
   // zamenjamo sklice [@fig:...]
   document.body.innerHTML = document.body.innerHTML.replace(
-    /\[@(fig:[^\]]+)\]/g,
-    (_, rawId) =>
-      console.log("FIG REF:", rawId, "exists?", figures.hasOwnProperty(rawId));
-      figures[rawId]
-        ? `<a href="#${rawId}">sl. ${figures[rawId]}</a>`
-        : `??`
+    /\[@fig:([^\]]+)\]/g,
+    function (_match, rawId) {
+      console.log("FIG REF:", rawId, "exists?", Object.prototype.hasOwnProperty.call(figures, rawId));
+      if (figures[rawId]) {
+        return '<a href="#' + rawId + '">slika ' + figures[rawId] + "</a>";
+      }
+      return "??";
+    }
   );
 
 
