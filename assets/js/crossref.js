@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!img) return;
 
     // Poiščemo {#fig:...}
-    const match = p.innerHTML.match(/\{#(fig:[^}]+)\}/);
+    //const match = p.innerHTML.match(/\{#(fig:[^}]+)\}/);
+    const match = p.innerHTML.match(/\{#fig:([^\s}]+)[^}]*\}/);
     if (!match) return;
 
     const id = match[1];
