@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /\[@(fig:[^\]]+)\]/g,
     (_, id) =>
       figures[id]
-        ? `<a href="#${id}">slika ${figures[id]}</a>`
+        ? `<a href="#${id}">sl. ${figures[id]}</a>`
         : `??`
   );
 });
