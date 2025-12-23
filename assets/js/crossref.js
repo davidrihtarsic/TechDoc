@@ -41,16 +41,24 @@ document.addEventListener("DOMContentLoaded", () => {
         : `??`
   );
 
-  // === TABLE CROSS-REFERENCES =====================================
+
+// === TABLE CROSS-REFERENCES =====================================
 
   let tblCounter = 0;
   const tables = {};
 
-  document.querySelectorAll("table").forEach(table => {
-    const captionP = table.nextElementSibling;
+  document.querySelectorAll("div.table-wrapper").forEach(wrapper => {
+    const table = wrapper.querySelector("table");
+    if (!table) return;
 
-    if (!captionP || captionP.tagName !== "P") return;
+    // napis tabele je v <p> ZA wrapperjem
+    let captionP = wrapper.nextElementSibling;
+    while (captionP && captionP.tagName !== "P") {
+      captionP = captionP.nextElementSibling;
+    }
+    if (!captionP) return;
 
+    // poiščemo {#tbl:...}
     const match = captionP.textContent.match(/\{#(tbl:[^}]+)\}/);
     if (!match) return;
 
@@ -61,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ID damo tabeli
     table.id = id;
 
-    // očistimo {#tbl:...}
+    // očistimo napis
     const captionText = captionP.textContent
       .replace(/\{#tbl:[^}]+\}/, "")
       .replace(/^Table:\s*/i, "")
@@ -70,6 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // nov napis
     captionP.textContent = `Tabela ${tblCounter}: ${captionText}`;
     captionP.classList.add("table-caption");
+
+    // PREMAKNEMO NAPIS PRED TABELO
+    wrapper.parentNode.insertBefore(captionP, wrapper);
   });
 
   // zamenjava sklicev [@tbl:...]
@@ -81,6 +92,5 @@ document.addEventListener("DOMContentLoaded", () => {
         : `??`
   );
   console.log("TABLE DEBUG: tables found =", document.querySelectorAll("table").length);
-
 });
 
