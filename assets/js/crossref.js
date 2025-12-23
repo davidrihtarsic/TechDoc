@@ -95,60 +95,67 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // === EQUATION CROSS-REFERENCES ==================================
 
-  if (window.MathJax && MathJax.Hub) {
-    MathJax.Hub.Queue(() => {
-  
-      let eqCounter = 0;
-      const equations = {};
-  
-      document.querySelectorAll('script[type="math/tex"]').forEach(script => {
-        const p = script.parentElement;
-        if (!p || p.tagName !== "P") return;
-  
-        // poiščemo {#eq:...} v besedilu <p>
-        const match = p.textContent.match(/\{#(eq:[^}]+)\}/);
-        if (!match) return;
-  
-        const id = match[1];
-        eqCounter++;
-        equations[id] = eqCounter;
-  
-        // MathJax container je prejšnji sibling
-        const container = script.previousElementSibling;
-        if (!container || !container.classList.contains("MathJax")) return;
-  
-        // ID damo na enačbo
-        container.id = id;
-  
-        // odstranimo {#eq:...} iz <p>
-        p.textContent = p.textContent.replace(/\{#eq:[^}]+\}/, "");
-  
-        // dodamo številko enačbe
-        const tag = document.createElement("span");
-        tag.className = "equation-number";
-        tag.textContent = `(${eqCounter})`;
-  
-        container.style.position = "relative";
-        tag.style.position = "absolute";
-        tag.style.right = "-2.5em";
-        tag.style.top = "50%";
-        tag.style.transform = "translateY(-50%)";
-  
-        container.appendChild(tag);
-      });
-  
-      // zamenjava sklicev [@eq:...]
-      document.body.innerHTML = document.body.innerHTML.replace(
-        /\[@(eq:[^\]]+)\]/g,
-        (_, id) =>
-          equations[id]
-            ? `<a href="#${id}">(enačba ${equations[id]})</a>`
-            : `??`
-      );
-  
-    });
-  }
+if (window.MathJax && MathJax.Hub) {
+  MathJax.Hub.Queue(() => {
 
+    let eqCounter = 0;
+    const equations = {};
+
+    document.querySelectorAll('script[type="math/tex"]').forEach(script => {
+      const p = script.parentElement;
+      if (!p || p.tagName !== "P") return;
+
+      // poiščemo text node z {#eq:...}
+      let labelNode = null;
+      p.childNodes.forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE && /\{#eq:[^}]+\}/.test(node.textContent)) {
+          labelNode = node;
+        }
+      });
+      if (!labelNode) return;
+
+      const match = labelNode.textContent.match(/\{#(eq:[^}]+)\}/);
+      if (!match) return;
+
+      const id = match[1];
+      eqCounter++;
+      equations[id] = eqCounter;
+
+      // MathJax container
+      const container = script.previousElementSibling;
+      if (!container || !container.classList.contains("MathJax")) return;
+
+      // ID damo na MathJax element
+      container.id = id;
+
+      // IZBRIŠEMO SAMO LABEL iz text node-a
+      labelNode.textContent = labelNode.textContent.replace(/\{#eq:[^}]+\}/, "");
+
+      // dodamo številko enačbe
+      const tag = document.createElement("span");
+      tag.className = "equation-number";
+      tag.textContent = `(${eqCounter})`;
+
+      container.style.position = "relative";
+      tag.style.position = "absolute";
+      tag.style.right = "-2.5em";
+      tag.style.top = "50%";
+      tag.style.transform = "translateY(-50%)";
+
+      container.appendChild(tag);
+    });
+
+    // zamenjava sklicev [@eq:...]
+    document.body.innerHTML = document.body.innerHTML.replace(
+      /\[@(eq:[^\]]+)\]/g,
+      (_, id) =>
+        equations[id]
+          ? `<a href="#${id}">(enačba ${equations[id]})</a>`
+          : `??`
+    );
+
+  });
+}
 //konec DOMContentLoad-erja
 });
 
