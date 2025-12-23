@@ -3,6 +3,7 @@ plugins:
 title: "TechDoc"
 remote_theme: pmarsceill/just-the-docs
 search_enabled: true
+katex: true
 mermaid:
   # Version of mermaid library
   # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
