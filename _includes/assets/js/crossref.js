@@ -1,4 +1,6 @@
+console.log("crossref.js LOADED");
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("crossref.js DOMContentLoaded");
   let figCounter = 0;
   const figures = {};
 
