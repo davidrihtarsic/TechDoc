@@ -1,0 +1,17 @@
+.equation-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5em 0;
+}
+
+.equation-wrapper .MathJax {
+  margin: 0 auto;
+}
+
+.equation-number {
+  font-size: 0.9em;
+  font-style: italic;
+  white-space: nowrap;
+  margin-left: 1em;
+}

@@ -136,13 +136,20 @@ if (window.MathJax && MathJax.Hub) {
       tag.className = "equation-number";
       tag.textContent = `(${eqCounter})`;
 
-      container.style.position = "relative";
-      tag.style.position = "absolute";
-      tag.style.right = "-2.5em";
-      tag.style.top = "50%";
-      tag.style.transform = "translateY(-90%)";
+      // === WRAPPER ZA PORAVNAVO ======================================
 
-      container.appendChild(tag);
+      // ustvarimo wrapper
+      const wrapper = document.createElement("div");
+      wrapper.className = "equation-wrapper";
+
+      // wrapper postavimo TJA, kjer je bila enačba
+      container.parentNode.insertBefore(wrapper, container);
+
+      // prestavimo MathJax element v wrapper
+      wrapper.appendChild(container);
+
+      // dodamo še številko
+      wrapper.appendChild(tag);
     });
 
     // zamenjava sklicev [@eq:...]
@@ -150,7 +157,7 @@ if (window.MathJax && MathJax.Hub) {
       /\[@(eq:[^\]]+)\]/g,
       (_, id) =>
         equations[id]
-          ? `<a href="#${id}">(enačba ${equations[id]})</a>`
+          ? `<a href="#${id}">en. ${equations[id]}</a>`
           : `??`
     );
 
