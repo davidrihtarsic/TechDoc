@@ -9,6 +9,7 @@ has_children: true
 - Celotno učno gradivo lahko presnamete [tukaj](./Skripta/pdf/Modeliranje_in_tehniska_dokumentacija.pdf). To gradivo je v nastajanju in trenutno služi namesto zapiskov predavanj.
 - [Navodila uporabe FreeCAD orodja](./FreeCAD_hitri_pregledni_vodnik_2018v4.pdf) so nastale pod vodstvom dr. Samota Zupana, ki na strojni fakulteti poučuje tehniško dokumentacijo.
 - [Hitri vodnik kotiranja](./Primeri_kotiranja_hitri_vodnik.pdf) na primerih iz nalog za osnovno šolo je zapisal dr. Samo Zupan. Komentarji h kotiranju jedrnato povzemajo logiko, ki ji sledimo pri kotiranju.
+- [CAD izziv](https://davidrihtarsic.github.io/CAD_Game/) je brezplačna in odprto kodna igra v kateri se lahko pomerite kako hitri ste pri modeliranju. Vaše rezultate lahko primerjate z drugimi tekmovalci. Tekmujete lahko kot gost, ali pa s svojim imenom.
 
 # FreeCAD priboljški:
 
