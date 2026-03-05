@@ -14,7 +14,9 @@ has_children: true
 # FreeCAD priboljški:
 
 - Vrsta pisave [ISOCPEUR](./isocpeur.ttf) je zelo podobna pisavi, ki jo predpisuje ISO 3098 standard. Presnemite datoteko in namestite obliko pisave tako, da na datoteko kliknete z desno miškino tipko in izberite `Install`.
-- Nastavitvena datoteka [user.cfg](./user.cfg) za FreeCAD v1.0.2
+- Nastavitvena datoteka :
+  - [user.cfg](./v1-0/user.cfg) za FreeCAD v1.0.2 in
+  - [user.cfg](./v1-1/user.cfg) za FreeCAD v1.1
 - Predloga [sestavne risbe](./A3_Land_PeF_TD_SR.svg)
 - Predloga [delavniške risbe](./A3_Land_PeF_TD_DR.svg)
 - [Makro za poravnavo širine kosovnice](./PoravnajKosovnico.FCMacro) z glavo sestavne risbe
