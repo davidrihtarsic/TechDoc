@@ -1,5 +1,2 @@
 Convering 5.2_T_Tolerance_Ujemi.md -> PDF ..WARNING: pandoc-crossref was compiled with pandoc 3.8.3 but is being run through 3.9. This is not supported. Strange things may (and likely will) happen silently.
-[WARNING] [makePDF] LaTeX Warning: Reference `tbl:lega_toleranux10dnega_polja'
-  on page 5 undefined on input line 723.
-[WARNING] [makePDF] LaTeX Warning: There were undefined references.
 ..[32m Done [0m
