@@ -15,7 +15,7 @@ has_children: true
 
 - Vrsta pisave [ISOCPEUR](./isocpeur.ttf) je zelo podobna pisavi, ki jo predpisuje ISO 3098 standard. Presnemite datoteko in namestite obliko pisave tako, da na datoteko kliknete z desno miškino tipko in izberite `Install`.
 - Nastavitveni datoteki :
-  - [](./v1-0/TiT [PartDesign, TechDraw].cfg) in
+  - [nastavitvena datoteka](./v1-0/TiT [PartDesign, TechDraw].cfg) in
   - [](./v1-0/TiT [VsaDelovnaNamizja].cfg)
 - Predloga [sestavne risbe](./A3_Land_PeF_TD_SR.svg)
 - Predloga [delavniške risbe](./A3_Land_PeF_TD_DR.svg)
