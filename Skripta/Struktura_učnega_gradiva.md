@@ -113,3 +113,13 @@ Na to naj sledi še dokument za izvedbo vaj. Naslov vsake vaje naj se začne na 
 
 ```
 S tako strukturo naj bo pripravljeno učno gradivo za vsako učno enoto posebej.
+
+### Navodila za strukturiranje pod-poglavij
+
+Pripravi besedilo za podpoglavje o Kotiranju izvrtin z ugrezi izvrtin. Vsebino črpaj iz pripetih datotek iz knjige Tehnična dokumentacija (Predil in sod., 2011). Besedilo naj bo pripravljeno v obliki tehničnega priročnika (ki ga bom uporabil za poučevanje študentov). Sledi naslednjemu vrstnemu redu vsebine:
+
+1. Najprej naj bo opisano splošno kotiranje izvrtin, ki prebadajo predmet in slepih lukenj. Izpostavi, da nikoli ne kotiramo skritih robov izvrtine, pač pa moramo izvrtino pripraviti v prerezu. Omeni tudi, da v FreeCAD programu v ta namen uporabljamo orodje "Hole". v katerem lahko nastavimo vse parametre izvrtine.
+2. Na to naj sledo pod-pod-poglavje o centrirnih izvrtinah, kjer omeni le najenostavnejši primeri tipa A (po ISO 866). V preglednici podaj tri tipične izvrtine s premerom d= 1mm, 2mm in 4mm.
+3. Na to naj sledi pod-pod-poglavje o Ugrezninah. Izpostavi le obliko A (90°) in obliko H (valjasta poglobitev). Pripravi tudi preglednice z definicijskimi merami. 
+
+Predvidi tudi slikovno gradivo, ki ga bom narisal v FreeCAD programu in ga naknadno vstavil v prirpčnik. Besedilo vključi kot komentar: > Slika <št. slike>: <Kratek opis slike.> Predno začneš pripravljati vsebino tega podpoglavja v canvas, mi lahko zastaviš še kakšna vprašanja, da bolj natančno in točno definirava vsebino.
