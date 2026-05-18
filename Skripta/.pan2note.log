@@ -1,5 +1,17 @@
-Convering 2.3_T_Priprava_Predloge.md -> PDF ..WARNING: pandoc-crossref was compiled with pandoc 3.8.3 but is being run through 3.9.0.2. This is not supported. Strange things may (and likely will) happen silently.
-[WARNING] [makePDF] LaTeX Warning: Reference `fig:okvir_5mm' on page 1 undefined
-  on input line 514.
-[WARNING] [makePDF] LaTeX Warning: There were undefined references.
+Convering 7.0_T_ELEKTROTEHNISKE_SHEME.md -> PDF ..WARNING: pandoc-crossref was compiled with pandoc 3.8.3 but is being run through 3.9.0.2. This is not supported. Strange things may (and likely will) happen silently.
+[WARNING] Could not fetch resource ./slike/primer_elektricne_sheme.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/kicad_pregled_okolja.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/kicad_nov_projekt.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/kicad_simbol_footprint_3d.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/kicad_shema.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/kicad_pcb.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/kicad_3d_model.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/osnovni_simboli_komponent.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/povezani_nepovezani_vodniki.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/napajanje_in_masa.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/upor_simbol.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/kondenzator_simbol.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/dioda_led.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/tranzistorji.png: replacing image with description
+[WARNING] Could not fetch resource ./slike/integrirano_vezje.png: replacing image with description
 ..[32m Done [0m
